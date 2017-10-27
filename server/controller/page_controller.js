@@ -100,7 +100,7 @@ exports.register = function(server, options, next) {
         {
             method: 'GET',
             path: '/index',
-            handler: function(request, reply) {                
+            handler: function(request, reply) {
                     return reply.view("index");
             },
         },
@@ -174,6 +174,33 @@ exports.register = function(server, options, next) {
 				});
 			}
 		},
+
+        //业绩
+        {
+            method: 'GET',
+            path: '/achievement',
+            handler: function(request, reply) {
+              return reply.view("achievement");;
+            }
+        },
+
+        //未支付列表
+        {
+            method: 'GET',
+            path: '/no_pay',
+            handler: function(request, reply) {
+              return reply.view("no_pay");;
+            }
+        },
+
+        //返修
+        {
+            method: 'GET',
+            path: '/repair',
+            handler: function(request, reply) {
+              return reply.view("repair");;
+            }
+        },
 
 
     ]);

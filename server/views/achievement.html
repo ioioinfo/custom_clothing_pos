@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>业绩</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap2.min.css">
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/example.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/unicorn.main.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/achievement.css">
+</head>
+<body>
+    <div id="achievement"></div>
+    <script type="text/javascript">
+      //表头
+      var tt = [{name:'id',title:'服装款号'}
+      ,{name:'product_name',title:'服装名称'}
+      ,{name:'product_sale_price',title:'售价'}
+      ,{name:'product_pay_yes',title:'已付'}
+      ,{name:'product_pay_no',title:'未付'}
+      ,{name:'update_at_text',title:'定制时间'}];
+
+      var rows = [{id:"001",product_name:"旗袍",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"002",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"003",product_name:"下衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"004",product_name:"裙子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"005",product_name:"皮衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"006",product_name:"鞋子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"007",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"001",product_name:"旗袍",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"002",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"003",product_name:"下衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"004",product_name:"裙子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"005",product_name:"皮衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"006",product_name:"鞋子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"007",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"001",product_name:"旗袍",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"002",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"003",product_name:"下衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"004",product_name:"裙子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"005",product_name:"皮衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"006",product_name:"鞋子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"007",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"001",product_name:"旗袍",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"002",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"003",product_name:"下衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"004",product_name:"裙子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"005",product_name:"皮衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"006",product_name:"鞋子",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},
+                {id:"007",product_name:"上衣",product_sale_price:"980",product_pay_yes:"300",product_pay_no:"680",update_at_text:"2017-10-27"},]
+
+      function getTableData(cb) {
+          cb({tabthitems:tt,tabtritems:rows});
+      };
+    </script>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/react.min.js"></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/app/achievement.js"></script>
+</body>
+</html>

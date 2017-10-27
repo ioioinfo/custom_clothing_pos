@@ -17,6 +17,9 @@ module.exports = {
     entry: {
         index: './app/index.jsx',
         login: './app/login.jsx',
+        achievement: './app/achievement.jsx',
+        no_pay: './app/no_pay.jsx',
+        repair: './app/repair.jsx',
     },
     output: {
         path: __dirname,

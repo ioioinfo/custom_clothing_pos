@@ -1,0 +1,12 @@
+.table th{
+    text-align: left;
+}
+.table th:last-child{
+    width: 34px;
+}
+.overflow_hidden{
+    overflow: hidden;
+}
+td a {
+    color: #fff;
+}

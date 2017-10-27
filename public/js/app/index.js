@@ -60,12 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 2:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101,12 +100,15 @@ var Pos = function (_React$Component) {
             var list2 = [{ title: "裤长", key: "1" }, { title: "臀高", key: "2" }, { title: "裙长", key: "3" }, { title: "腹高", key: "4" }, { title: "腰围", key: "5" }, { title: "横档", key: "6" }, { title: "腹围", key: "7" }, { title: "立档", key: "8" }, { title: "臀围", key: "9" }, { title: "脚口", key: "10" }];
             var list3 = [{ title: "量体师", key: "1" }, { title: "版型师", key: "2" }, { title: "裁剪师", key: "3" }, { title: "缝纫工", key: "4" }, { title: "手工", key: "5" }, { title: "质检", key: "6" }];
             this.setState({ items: list, items1: list1, items2: list2, items3: list3 });
+            $(".check_order").css("z-index", "-99");
+            var width = $(".clothing_kuanhao_number").width();
+            $(".clothing_kuanhao_input").css("text-indent", width);
         }
     }, {
         key: "handleClick",
         value: function handleClick(e) {
             $(".backgroundOpacitv").hide();
-            $(".check_order").hide();
+            $(".check_order").css("z-index", "-99");
             $(".pay_wrap").hide();
         }
     }, {
@@ -133,6 +135,17 @@ var Pos = function (_React$Component) {
                     React.createElement(
                         "div",
                         { className: "check_order_top" },
+                        React.createElement(
+                            "div",
+                            { className: "clothing_kuanhao" },
+                            React.createElement(
+                                "span",
+                                { className: "clothing_kuanhao_number" },
+                                "\u670D\u88C5\u6B3E\u53F7\uFF1A"
+                            ),
+                            React.createElement("input", { type: "text", className: "clothing_kuanhao_input" })
+                        ),
+                        React.createElement("hr", null),
                         React.createElement(
                             "div",
                             { className: "partOne" },
@@ -175,7 +188,9 @@ var Pos = function (_React$Component) {
                     )
                 ),
                 React.createElement(Pay, null),
-                React.createElement(PayWay, null)
+                React.createElement(PayWay, null),
+                React.createElement(Toast, null),
+                React.createElement(ShouHuo, null)
             );
         }
     }]);
@@ -184,10 +199,227 @@ var Pos = function (_React$Component) {
 }(React.Component);
 
 ;
+
+var Left = function (_React$Component2) {
+    _inherits(Left, _React$Component2);
+
+    function Left() {
+        _classCallCheck(this, Left);
+
+        return _possibleConstructorReturn(this, (Left.__proto__ || Object.getPrototypeOf(Left)).apply(this, arguments));
+    }
+
+    _createClass(Left, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            var height = $(window).height() - 64;
+            $("#product_list").css({ "height": height, "overflow": "auto" });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "div",
+                    { className: "search_wrap" },
+                    React.createElement(
+                        "div",
+                        { id: "search" },
+                        React.createElement("input", { type: "text", placeholder: "\u641C\u7D22..." }),
+                        React.createElement(
+                            "button",
+                            { type: "submit", className: "tip-right", title: "Search" },
+                            React.createElement("i", { className: "fa fa-search icon icon_style_search" })
+                        )
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { id: "product_list" },
+                    React.createElement(ProductList, null),
+                    React.createElement(ProductList, null),
+                    React.createElement(ProductList, null),
+                    React.createElement(ProductList, null)
+                )
+            );
+        }
+    }]);
+
+    return Left;
+}(React.Component);
+
+;
+
+var ProductList = function (_React$Component3) {
+    _inherits(ProductList, _React$Component3);
+
+    function ProductList(props) {
+        _classCallCheck(this, ProductList);
+
+        var _this3 = _possibleConstructorReturn(this, (ProductList.__proto__ || Object.getPrototypeOf(ProductList)).call(this, props));
+
+        _this3.handleClick = _this3.handleClick.bind(_this3);
+        _this3.handleClick1 = _this3.handleClick1.bind(_this3);
+        _this3.state = {};
+        return _this3;
+    }
+
+    _createClass(ProductList, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {}
+    }, {
+        key: "handleClick",
+        value: function handleClick(e) {
+            $(".backgroundOpacitv").show();
+            $(".check_order").css("z-index", "199");
+        }
+    }, {
+        key: "handleClick1",
+        value: function handleClick1(e) {
+            $(".backgroundOpacitv").show();
+            $(".pay_wrap").show();
+        }
+    }, {
+        key: "render",
+        value: function render() {
+
+            return React.createElement(
+                "div",
+                { className: "left_wrap" },
+                React.createElement(
+                    "div",
+                    { className: "order_list_time" },
+                    React.createElement(
+                        "p",
+                        null,
+                        "\u4E0B\u5355\u65F6\u95F4\uFF1A",
+                        React.createElement(
+                            "span",
+                            null,
+                            "2017-10-25 14:11"
+                        )
+                    ),
+                    React.createElement(
+                        "p",
+                        null,
+                        "\u7B49\u5F85\u53D6\u8D27"
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { className: "order_list_pruduct" },
+                    React.createElement(
+                        "div",
+                        { className: "product_img product_infor" },
+                        React.createElement("img", { src: "images/shangyi.jpg", className: "product_img_infor" })
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "product_infor" },
+                        React.createElement(
+                            "p",
+                            null,
+                            "\u5355\u53F7"
+                        ),
+                        React.createElement(
+                            "p",
+                            { className: "" },
+                            "12345"
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "product_infor" },
+                        React.createElement(
+                            "p",
+                            null,
+                            "\u540D\u79F0"
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "\u6BDB\u8863"
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "product_infor" },
+                        React.createElement(
+                            "p",
+                            null,
+                            "\u552E\u4EF7"
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "\xA5288.00"
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "product_infor" },
+                        React.createElement(
+                            "p",
+                            null,
+                            "\u5DF2\u4ED8"
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "\xA5100.00"
+                        )
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "product_infor" },
+                        React.createElement(
+                            "p",
+                            null,
+                            "\u672A\u4ED8"
+                        ),
+                        React.createElement(
+                            "p",
+                            { className: "weifu_price" },
+                            "\xA5188.00"
+                        )
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { className: "order_list_button" },
+                    React.createElement(
+                        "span",
+                        { className: "button button1" },
+                        React.createElement("i", { className: "fa fa-close icon" }),
+                        "\u5220\u9664"
+                    ),
+                    React.createElement(
+                        "span",
+                        { className: "button button2", onClick: this.handleClick },
+                        React.createElement("i", { className: "fa fa-eye icon" }),
+                        "\u67E5\u770B"
+                    ),
+                    React.createElement(
+                        "span",
+                        { className: "button button3", onClick: this.handleClick1 },
+                        React.createElement("i", { className: "fa fa-credit-card icon" }),
+                        "\u652F\u4ED8"
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ProductList;
+}(React.Component);
+
+;
 // 输入列表
 
-var InputOne = function (_React$Component2) {
-    _inherits(InputOne, _React$Component2);
+var InputOne = function (_React$Component4) {
+    _inherits(InputOne, _React$Component4);
 
     function InputOne(props) {
         _classCallCheck(this, InputOne);
@@ -224,8 +456,8 @@ var InputOne = function (_React$Component2) {
 ;
 // checked
 
-var InputTwo = function (_React$Component3) {
-    _inherits(InputTwo, _React$Component3);
+var InputTwo = function (_React$Component5) {
+    _inherits(InputTwo, _React$Component5);
 
     function InputTwo() {
         _classCallCheck(this, InputTwo);
@@ -284,8 +516,8 @@ var InputTwo = function (_React$Component3) {
 ;
 // checked
 
-var InputThree = function (_React$Component4) {
-    _inherits(InputThree, _React$Component4);
+var InputThree = function (_React$Component6) {
+    _inherits(InputThree, _React$Component6);
 
     function InputThree() {
         _classCallCheck(this, InputThree);
@@ -336,8 +568,8 @@ var InputThree = function (_React$Component4) {
 ;
 // 输入列表
 
-var InputFour = function (_React$Component5) {
-    _inherits(InputFour, _React$Component5);
+var InputFour = function (_React$Component7) {
+    _inherits(InputFour, _React$Component7);
 
     function InputFour() {
         _classCallCheck(this, InputFour);
@@ -374,8 +606,8 @@ var InputFour = function (_React$Component5) {
 ;
 // 输入列表
 
-var InputFive = function (_React$Component6) {
-    _inherits(InputFive, _React$Component6);
+var InputFive = function (_React$Component8) {
+    _inherits(InputFive, _React$Component8);
 
     function InputFive() {
         _classCallCheck(this, InputFive);
@@ -412,8 +644,8 @@ var InputFive = function (_React$Component6) {
 ;
 // 输入列表
 
-var InputSix = function (_React$Component7) {
-    _inherits(InputSix, _React$Component7);
+var InputSix = function (_React$Component9) {
+    _inherits(InputSix, _React$Component9);
 
     function InputSix() {
         _classCallCheck(this, InputSix);
@@ -458,178 +690,10 @@ var InputSix = function (_React$Component7) {
 
 ;
 
-var Left = function (_React$Component8) {
-    _inherits(Left, _React$Component8);
-
-    function Left(props) {
-        _classCallCheck(this, Left);
-
-        var _this8 = _possibleConstructorReturn(this, (Left.__proto__ || Object.getPrototypeOf(Left)).call(this, props));
-
-        _this8.handleClick = _this8.handleClick.bind(_this8);
-        _this8.handleClick1 = _this8.handleClick1.bind(_this8);
-        _this8.state = {};
-        return _this8;
-    }
-
-    _createClass(Left, [{
-        key: "componentDidMount",
-        value: function componentDidMount() {}
-    }, {
-        key: "handleClick",
-        value: function handleClick(e) {
-            $(".backgroundOpacitv").show();
-            $(".check_order").show();
-        }
-    }, {
-        key: "handleClick1",
-        value: function handleClick1(e) {
-            $(".backgroundOpacitv").show();
-            $(".pay_wrap").show();
-        }
-    }, {
-        key: "render",
-        value: function render() {
-
-            return React.createElement(
-                "div",
-                null,
-                React.createElement(
-                    "div",
-                    { className: "search_wrap" },
-                    React.createElement(
-                        "div",
-                        { id: "search" },
-                        React.createElement("input", { type: "text", placeholder: "\u641C\u7D22..." }),
-                        React.createElement(
-                            "button",
-                            { type: "submit", className: "tip-right", title: "Search" },
-                            React.createElement("i", { className: "fa fa-search icon icon_style_search" })
-                        )
-                    )
-                ),
-                React.createElement(
-                    "div",
-                    { className: "left_wrap" },
-                    React.createElement(
-                        "div",
-                        { className: "order_list_time" },
-                        React.createElement(
-                            "p",
-                            null,
-                            "\u4E0B\u5355\u65F6\u95F4\uFF1A",
-                            React.createElement(
-                                "span",
-                                null,
-                                "2017-10-25 14:11"
-                            )
-                        ),
-                        React.createElement(
-                            "p",
-                            null,
-                            "\u7B49\u5F85\u53D6\u8D27"
-                        )
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "order_list_pruduct" },
-                        React.createElement(
-                            "div",
-                            { className: "product_img product_infor" },
-                            React.createElement("img", { src: "images/shangyi.jpg", className: "product_img_infor" })
-                        ),
-                        React.createElement(
-                            "div",
-                            { className: "product_infor" },
-                            React.createElement(
-                                "p",
-                                null,
-                                "\u7ED2\u6BDB\u8863"
-                            ),
-                            React.createElement(
-                                "p",
-                                { className: "yuan_price" },
-                                "\xA5288.00"
-                            )
-                        ),
-                        React.createElement(
-                            "div",
-                            { className: "product_infor" },
-                            React.createElement(
-                                "p",
-                                null,
-                                "\u73B0\u4EF7"
-                            ),
-                            React.createElement(
-                                "p",
-                                null,
-                                "\xA5288.00"
-                            )
-                        ),
-                        React.createElement(
-                            "div",
-                            { className: "product_infor" },
-                            React.createElement(
-                                "p",
-                                null,
-                                "\u5DF2\u4ED8"
-                            ),
-                            React.createElement(
-                                "p",
-                                null,
-                                "\xA5100.00"
-                            )
-                        ),
-                        React.createElement(
-                            "div",
-                            { className: "product_infor" },
-                            React.createElement(
-                                "p",
-                                null,
-                                "\u672A\u4ED8"
-                            ),
-                            React.createElement(
-                                "p",
-                                { className: "weifu_price" },
-                                "\xA5188.00"
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "order_list_button" },
-                        React.createElement(
-                            "span",
-                            { className: "button button1" },
-                            React.createElement("i", { className: "fa fa-close icon" }),
-                            "\u5220\u9664"
-                        ),
-                        React.createElement(
-                            "span",
-                            { className: "button button2", onClick: this.handleClick },
-                            React.createElement("i", { className: "fa fa-eye icon" }),
-                            "\u67E5\u770B"
-                        ),
-                        React.createElement(
-                            "span",
-                            { className: "button button3", onClick: this.handleClick1 },
-                            React.createElement("i", { className: "fa fa-credit-card icon" }),
-                            "\u652F\u4ED8"
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Left;
-}(React.Component);
-
-;
 // 框架
 
-var PosRightTop = function (_React$Component9) {
-    _inherits(PosRightTop, _React$Component9);
+var PosRightTop = function (_React$Component10) {
+    _inherits(PosRightTop, _React$Component10);
 
     function PosRightTop() {
         _classCallCheck(this, PosRightTop);
@@ -681,8 +745,8 @@ var PosRightTop = function (_React$Component9) {
 ;
 // 右侧下部
 
-var PosRightBottom = function (_React$Component10) {
-    _inherits(PosRightBottom, _React$Component10);
+var PosRightBottom = function (_React$Component11) {
+    _inherits(PosRightBottom, _React$Component11);
 
     function PosRightBottom() {
         _classCallCheck(this, PosRightBottom);
@@ -707,7 +771,11 @@ var PosRightBottom = function (_React$Component10) {
                     React.createElement(
                         "div",
                         null,
-                        "\u4E1A\u7EE9"
+                        React.createElement(
+                            "a",
+                            { href: "achievement" },
+                            "\u4E1A\u7EE9"
+                        )
                     )
                 ),
                 React.createElement(
@@ -721,7 +789,11 @@ var PosRightBottom = function (_React$Component10) {
                     React.createElement(
                         "div",
                         null,
-                        "\u672A\u652F\u4ED8"
+                        React.createElement(
+                            "a",
+                            { href: "no_pay" },
+                            "\u672A\u5B8C\u6210\u652F\u4ED8"
+                        )
                     )
                 ),
                 React.createElement(
@@ -735,7 +807,11 @@ var PosRightBottom = function (_React$Component10) {
                     React.createElement(
                         "div",
                         null,
-                        "\u8FD4\u4FEE"
+                        React.createElement(
+                            "a",
+                            { href: "repair" },
+                            "\u8FD4\u4FEE"
+                        )
                     )
                 )
             );
@@ -749,22 +825,28 @@ var PosRightBottom = function (_React$Component10) {
 
 // 支付
 
-var Pay = function (_React$Component11) {
-    _inherits(Pay, _React$Component11);
+var Pay = function (_React$Component12) {
+    _inherits(Pay, _React$Component12);
 
     function Pay(props) {
         _classCallCheck(this, Pay);
 
-        var _this11 = _possibleConstructorReturn(this, (Pay.__proto__ || Object.getPrototypeOf(Pay)).call(this, props));
+        var _this12 = _possibleConstructorReturn(this, (Pay.__proto__ || Object.getPrototypeOf(Pay)).call(this, props));
 
-        _this11.handleClick = _this11.handleClick.bind(_this11);
-        return _this11;
+        _this12.handleClick = _this12.handleClick.bind(_this12);
+        _this12.handleClick1 = _this12.handleClick1.bind(_this12);
+        return _this12;
     }
 
     _createClass(Pay, [{
         key: "handleClick",
         value: function handleClick(e) {
             $(".pay_way").show();
+        }
+    }, {
+        key: "handleClick1",
+        value: function handleClick1(e) {
+            $(".querenShouhuo_wrap").show();
         }
     }, {
         key: "render",
@@ -785,7 +867,7 @@ var Pay = function (_React$Component11) {
                         { className: "pay_button_absolute" },
                         React.createElement(
                             "button",
-                            { className: "sure_product" },
+                            { className: "sure_product", onClick: this.handleClick1 },
                             "\u786E\u8BA4\u6536\u8D27"
                         ),
                         React.createElement(
@@ -810,22 +892,44 @@ var Pay = function (_React$Component11) {
 ;
 // 支付方式
 
-var PayWay = function (_React$Component12) {
-    _inherits(PayWay, _React$Component12);
+var PayWay = function (_React$Component13) {
+    _inherits(PayWay, _React$Component13);
 
     function PayWay(props) {
         _classCallCheck(this, PayWay);
 
-        var _this12 = _possibleConstructorReturn(this, (PayWay.__proto__ || Object.getPrototypeOf(PayWay)).call(this, props));
+        var _this13 = _possibleConstructorReturn(this, (PayWay.__proto__ || Object.getPrototypeOf(PayWay)).call(this, props));
 
-        _this12.handleClick = _this12.handleClick.bind(_this12);
-        return _this12;
+        _this13.handleClick = _this13.handleClick.bind(_this13);
+        _this13.handleClick1 = _this13.handleClick1.bind(_this13);
+        _this13.handleClick2 = _this13.handleClick2.bind(_this13);
+        return _this13;
     }
 
     _createClass(PayWay, [{
         key: "handleClick",
         value: function handleClick(e) {
             $(".pay_way").hide();
+        }
+    }, {
+        key: "handleClick1",
+        value: function handleClick1(e) {
+            $(".cash_wrap").show();
+        }
+    }, {
+        key: "handleClick2",
+        value: function handleClick2(e) {
+            var $loadingToast = $('#loadingToast');
+            if ($loadingToast.css('display') != 'none') return;
+
+            $loadingToast.fadeIn(100);
+            setTimeout(function () {
+                $loadingToast.fadeOut(100);
+            }, 1000);
+            $(".cash_wrap").hide();
+            $(".pay_way").hide();
+            $(".pay_wrap").hide();
+            $(".backgroundOpacitv").hide();
         }
     }, {
         key: "render",
@@ -848,11 +952,25 @@ var PayWay = function (_React$Component12) {
                     ),
                     React.createElement(
                         "div",
-                        { className: "pay_way_infor" },
+                        { className: "pay_way_infor", onClick: this.handleClick1 },
                         "\u73B0\u91D1"
                     )
                 ),
-                React.createElement("i", { className: "fa fa-window-close icon pay_way_close", onClick: this.handleClick })
+                React.createElement("i", { className: "fa fa-window-close icon pay_way_close", onClick: this.handleClick }),
+                React.createElement(
+                    "div",
+                    { className: "cash_wrap" },
+                    React.createElement(
+                        "div",
+                        { className: "cash_input_next" },
+                        React.createElement("input", { type: "number", placeholder: "\u8BF7\u8F93\u5165\u652F\u4ED8\u73B0\u91D1\u91D1\u989D", className: "cash_input" }),
+                        React.createElement(
+                            "span",
+                            { className: "cash_input_button", onClick: this.handleClick2 },
+                            "\u63D0 \u4EA4"
+                        )
+                    )
+                )
             );
         }
     }]);
@@ -861,9 +979,133 @@ var PayWay = function (_React$Component12) {
 }(React.Component);
 
 ;
+
+// 各种提示信息
+
+var Toast = function (_React$Component14) {
+    _inherits(Toast, _React$Component14);
+
+    function Toast(props) {
+        _classCallCheck(this, Toast);
+
+        return _possibleConstructorReturn(this, (Toast.__proto__ || Object.getPrototypeOf(Toast)).call(this, props));
+    }
+
+    _createClass(Toast, [{
+        key: "render",
+        value: function render() {
+            var style = { display: "none" };
+            return React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "div",
+                    { id: "loadingToast", style: style },
+                    React.createElement("div", { className: "weui-mask_transparent" }),
+                    React.createElement(
+                        "div",
+                        { className: "weui-toast" },
+                        React.createElement("i", { className: "weui-loading weui-icon_toast" }),
+                        React.createElement(
+                            "p",
+                            { className: "weui-toast__content" },
+                            "\u652F\u4ED8\u6210\u529F"
+                        )
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { id: "loadingToast1", style: style },
+                    React.createElement("div", { className: "weui-mask_transparent" }),
+                    React.createElement(
+                        "div",
+                        { className: "weui-toast" },
+                        React.createElement("i", { className: "weui-loading weui-icon_toast" }),
+                        React.createElement(
+                            "p",
+                            { className: "weui-toast__content" },
+                            "\u6536\u8D27\u6210\u529F"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Toast;
+}(React.Component);
+
+;
+// 各种提示信息
+
+var ShouHuo = function (_React$Component15) {
+    _inherits(ShouHuo, _React$Component15);
+
+    function ShouHuo(props) {
+        _classCallCheck(this, ShouHuo);
+
+        var _this15 = _possibleConstructorReturn(this, (ShouHuo.__proto__ || Object.getPrototypeOf(ShouHuo)).call(this, props));
+
+        _this15.handleClick = _this15.handleClick.bind(_this15);
+        _this15.handleClick1 = _this15.handleClick1.bind(_this15);
+        return _this15;
+    }
+
+    _createClass(ShouHuo, [{
+        key: "handleClick",
+        value: function handleClick(e) {
+            $(".querenShouhuo_wrap").hide();
+        }
+    }, {
+        key: "handleClick1",
+        value: function handleClick1(e) {
+            $(".querenShouhuo_wrap").hide();
+            var $loadingToast1 = $('#loadingToast1');
+            if ($loadingToast1.css('display') != 'none') return;
+
+            $loadingToast1.fadeIn(100);
+            setTimeout(function () {
+                $loadingToast1.fadeOut(100);
+            }, 1000);
+            $(".querenShouhuo_wrap").hide();
+            $(".pay_wrap").hide();
+            $(".backgroundOpacitv").hide();
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "div",
+                { className: "querenShouhuo_wrap" },
+                React.createElement(
+                    "div",
+                    { className: "querenShouhuo_title" },
+                    "\u662F\u5426\u786E\u8BA4\u6536\u8D27\uFF1F"
+                ),
+                React.createElement(
+                    "div",
+                    { className: "querenShouhuo_button_wrap" },
+                    React.createElement(
+                        "button",
+                        { onClick: this.handleClick },
+                        "\u53D6\u6D88\u6536\u8D27"
+                    ),
+                    React.createElement(
+                        "button",
+                        { onClick: this.handleClick1 },
+                        "\u786E\u8BA4\u6536\u8D27"
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ShouHuo;
+}(React.Component);
+
+;
 // 返回到页面
 ReactDOM.render(React.createElement(Pos, null), document.getElementById("pos"));
 
 /***/ })
-
-/******/ });
+/******/ ]);
