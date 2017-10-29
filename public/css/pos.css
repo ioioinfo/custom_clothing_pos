@@ -132,7 +132,7 @@ body,html{
     bottom: 0;
     right:0;
     box-sizing: border-box;
-    padding: 4px 20px 36px 0;
+    padding: 4px 20px 20px 0;
     background: #fff;
     border-left: 1px solid #e8e8e8;
 }
@@ -351,19 +351,25 @@ body,html{
     display: flex;
     flex-flow:row wrap;
     position: absolute;
-    bottom: 36px;
+    bottom: 20px;
     width: 100%;
 }
 .pos_right_bottom_wrap{
-    width: 50%;
+    width: 33.3%;
     text-align: center;
     font-size: 18px;
     font-weight: 400;
+    /*margin-bottom: 17px;*/
 }
 .icon_style_right_bottom{
-    color: #000;
+    color: #B6C7D6;
 }
-
+.pos_right_bottom_wrap a{
+    color: #B6C7D6;
+}
+.pos_right_bottom_wrap div{
+    /*display: inline-block;*/
+}
 /*支付弹出层*/
 .pay_wrap{
     position: fixed;
@@ -542,3 +548,7 @@ body,html{
 .querenShouhuo_button_wrap button:last-child{
     color: #000;
 }
+
+
+
+/*右侧下部样式*/
