@@ -95,11 +95,12 @@ class Left extends React.Component {
         return (
             <div>
                 <div className="search_wrap">
+                    <div className="worker_man">工号001</div>
                     <div id="search">
                         <input type="text" placeholder="搜索..."/>
-                    <button type="submit" className="tip-right" title="Search">
-                      <i className="fa fa-search icon icon_style_search"></i>
-                    </button>
+                        <button type="submit" className="tip-right" title="Search">
+                          <i className="fa fa-search icon icon_style_search"></i>
+                        </button>
                     </div>
                 </div>
                 <div id="product_list">
@@ -262,7 +263,7 @@ class InputSix extends React.Component {
   }
 };
 
-// 框架
+// 右上
 class PosRightTop extends React.Component {
   render() {
     return (
@@ -272,11 +273,12 @@ class PosRightTop extends React.Component {
                 <p className="pos_number">001</p>
                 <p className="pos_name">至尊宝</p>
             </div>
-            <div className="pos_right_top_style"><span className="exit">注销</span></div>
+            <div className="pos_right_top_style"></div>
         </div>
     );
   }
 };
+
 // 右侧下部
 class PosRightBottom extends React.Component {
   render() {

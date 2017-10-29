@@ -33,9 +33,19 @@ body,html{
     background: #fff;
     border-bottom: 7px solid #e8e8e8;
 }
+.worker_man{
+    height: 57px;
+    line-height: 57px;
+    display: inline-block;
+    padding: 0 9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #search{
     left: auto;
-    right: 25px;
+    right: 9px;
 }
 #search input[type=text],#search button,#search input[type=text]{
     box-shadow: none;
@@ -70,7 +80,7 @@ body,html{
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    padding: 7px 25px;
+    padding: 7px 9px;
 }
 .time_number{
 

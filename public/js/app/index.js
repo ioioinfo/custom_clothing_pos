@@ -226,6 +226,11 @@ var Left = function (_React$Component2) {
                     { className: "search_wrap" },
                     React.createElement(
                         "div",
+                        { className: "worker_man" },
+                        "\u5DE5\u53F7001"
+                    ),
+                    React.createElement(
+                        "div",
                         { id: "search" },
                         React.createElement("input", { type: "text", placeholder: "\u641C\u7D22..." }),
                         React.createElement(
@@ -690,7 +695,7 @@ var InputSix = function (_React$Component9) {
 
 ;
 
-// 框架
+// 右上
 
 var PosRightTop = function (_React$Component10) {
     _inherits(PosRightTop, _React$Component10);
@@ -726,15 +731,7 @@ var PosRightTop = function (_React$Component10) {
                         "\u81F3\u5C0A\u5B9D"
                     )
                 ),
-                React.createElement(
-                    "div",
-                    { className: "pos_right_top_style" },
-                    React.createElement(
-                        "span",
-                        { className: "exit" },
-                        "\u6CE8\u9500"
-                    )
-                )
+                React.createElement("div", { className: "pos_right_top_style" })
             );
         }
     }]);
@@ -743,6 +740,7 @@ var PosRightTop = function (_React$Component10) {
 }(React.Component);
 
 ;
+
 // 右侧下部
 
 var PosRightBottom = function (_React$Component11) {
